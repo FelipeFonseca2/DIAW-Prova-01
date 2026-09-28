@@ -5,7 +5,7 @@
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #f3f1ee;
+    background-color: #fff2df;
     color: #222;
 }
 
@@ -72,41 +72,142 @@ input[type="number"] {
     font-size: 14px;
 }
 
+.faixa-etaria {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.faixa-etaria input {
+    min-width: 0;
+}
+
+.botoes {
+    display: flex;
+    gap: 8px;
+}
+
+.botoes button,
+.botoes .limpar {
+    flex: 1;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.botoes button {
+    background-color: #df8200;
+    color: #fff;
+    border: 1px solid #df8200;
+}
+
+.botoes button:hover {
+    background-color: #df8200;
+}
+
+.botoes .limpar {
+    background-color: #fff;
+    color: #5b2d82;
+    border: 1px solid #df8200;
+}
 
 
+.resultado-info {
+    margin: 0 0 12px;
+}
 
-
-
-
+.sem-resultado {
+    background-color: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    color: #666;
+}
 
 .lista-candidatos {
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-gap: 12px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 12px;
 }
+
 .card-candidato {
-display: flex;
-gap: 12px;
+    display: flex;
+    gap: 12px;
+    background-color: #fff;
+    border-left: 4px solid #df8200;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }
+
 .foto-candidato {
-width: 90px;
-aspect-ratio: 161 / 225;
-object-fit: cover;
+    width: 90px;
+    aspect-ratio: 161 / 225;
+    object-fit: cover;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-color: #eee;
 }
+
+.dados-candidato h2 {
+    margin: 0 0 4px;
+    font-size: 16px;
+}
+
+.numero {
+    color: #df8200;
+    font-size: 14px;
+    margin-left: 4px;
+}
+
+.cargo {
+    margin: 0 0 6px;
+    font-size: 14px;
+    color: #444;
+}
+
+.etiquetas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 6px;
+}
+
+.etiqueta {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: #eee;
+    color: #555;
+}
+
 .etiqueta-f {
-background-color:
-#f7e1f0;
-color:
-#a0226f;
+    background-color: #f7e1f0;
+    color: #a0226f;
 }
+
 .etiqueta-m {
-background-color:
-#e1ecf7;
-color:
-#1f5c99;
+    background-color: #e1ecf7;
+    color: #1f5c99;
 }
+
+.etiqueta-idade {
+    background-color: #fdf3d8;
+    color: #7a5a00;
+}
+
+.detalhe {
+    margin: 2px 0;
+    font-size: 12px;
+    color: #666;
+}
+
 @media (max-width: 800px) {
-.layout {
-grid-template-columns: 1fr;
-}
+    .layout {
+        grid-template-columns: 1fr;
+    }
 }

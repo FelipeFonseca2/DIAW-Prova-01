@@ -28,10 +28,13 @@ public class CandidatosTseController {
             Model model) {
 
         List<Candidato> candidatos = candidatosTseService.filtrarPerfil(genero, escolaridade, idadeMin, idadeMax);
+
         model.addAttribute("candidatos", candidatos);
         model.addAttribute("totalEncontrado", candidatos.size());
+
         model.addAttribute("generos", candidatosTseService.listarGeneros());
         model.addAttribute("escolaridades", candidatosTseService.listarEscolaridades());
+
         model.addAttribute("generoSelecionado", genero == null ? "" : genero);
         model.addAttribute("escolaridadeSelecionada", escolaridade == null ? "" : escolaridade);
         model.addAttribute("idadeMin", idadeMin);
