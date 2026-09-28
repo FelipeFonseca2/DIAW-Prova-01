@@ -9,9 +9,8 @@ body {
     color: #222;
 }
 
-/* Cabeçalho */
 .topo {
-    background-color: #5b2d82;
+    background-color: #df8200;
     color: #fff;
     padding: 18px 28px;
 }
@@ -26,7 +25,6 @@ body {
     font-size: 14px;
 }
 
-/* Layout em duas colunas: filtros | lista */
 .layout {
     display: grid;
     grid-template-columns: 260px 1fr;
@@ -37,7 +35,6 @@ body {
     align-items: start;
 }
 
-/* Painel de filtros */
 .painel-filtros {
     background-color: #fff;
     border-radius: 8px;
@@ -55,7 +52,7 @@ body {
 .titulo-filtro {
     display: block;
     font-weight: bold;
-    color: #5b2d82;
+    color: #df8200;
     margin-bottom: 8px;
     padding: 0;
 }
@@ -102,22 +99,22 @@ input[type="number"] {
 }
 
 .botoes button {
-    background-color: #5b2d82;
+    background-color: #df8200;
     color: #fff;
-    border: 1px solid #5b2d82;
+    border: 1px solid #df8200;
 }
 
 .botoes button:hover {
-    background-color: #47206a;
+    background-color: #df8200;
 }
 
 .botoes .limpar {
     background-color: #fff;
     color: #5b2d82;
-    border: 1px solid #5b2d82;
+    border: 1px solid #df8200;
 }
 
-/* Resultados */
+
 .resultado-info {
     margin: 0 0 12px;
 }
@@ -129,19 +126,17 @@ input[type="number"] {
     color: #666;
 }
 
-/* Lista de cards responsiva */
 .lista-candidatos {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 12px;
 }
 
-/* Card horizontal: foto à esquerda, dados à direita */
 .card-candidato {
     display: flex;
     gap: 12px;
     background-color: #fff;
-    border-left: 4px solid #5b2d82;
+    border-left: 4px solid #df8200;
     border-radius: 8px;
     padding: 12px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
@@ -162,7 +157,7 @@ input[type="number"] {
 }
 
 .numero {
-    color: #5b2d82;
+    color: #df8200;
     font-size: 14px;
     margin-left: 4px;
 }
@@ -211,7 +206,6 @@ input[type="number"] {
     color: #666;
 }
 
-/* Telas estreitas: filtros acima da lista */
 @media (max-width: 800px) {
     .layout {
         grid-template-columns: 1fr;

@@ -14,10 +14,8 @@
 </header>
 
 <main class="layout">
-
     <aside class="painel-filtros">
         <form method="get" th:action="@{/}">
-
             <fieldset class="grupo-filtro">
                 <legend>Gênero</legend>
                 <label class="opcao">
@@ -29,7 +27,6 @@
                     <span th:text="${g}">Gênero</span>
                 </label>
             </fieldset>
-
             <div class="grupo-filtro">
                 <label class="titulo-filtro" for="escolaridade">Escolaridade</label>
                 <select id="escolaridade" name="escolaridade">
@@ -40,7 +37,6 @@
                             th:selected="${e == escolaridadeSelecionada}"></option>
                 </select>
             </div>
-
             <div class="grupo-filtro">
                 <span class="titulo-filtro">Faixa etária</span>
                 <div class="faixa-etaria">
@@ -49,35 +45,30 @@
                     <input type="number" name="idadeMax" min="0" placeholder="Até" th:value="${idadeMax}">
                 </div>
             </div>
-
             <div class="botoes">
                 <button type="submit">Filtrar</button>
                 <a th:href="@{/}" class="limpar">Limpar</a>
             </div>
         </form>
     </aside>
-
+    
     <section class="resultados">
         <p class="resultado-info">
             <strong th:text="${totalEncontrado}">0</strong> candidato(s) encontrado(s).
         </p>
-
         <p th:if="${totalEncontrado == 0}" class="sem-resultado">
             Nenhum candidato encontrado com esses filtros.
         </p>
-
         <div class="lista-candidatos">
             <article class="card-candidato" th:each="cand : ${candidatos}">
                 <img th:src="@{'/images/candidatos/' + ${cand.nomeArquivoFoto}}"
                      th:alt="${cand.nomeUrna}" class="foto-candidato" loading="lazy">
-
                 <div class="dados-candidato">
                     <h2>
                         <span th:text="${cand.nomeUrna}">Nome de urna</span>
                         <span class="numero" th:text="${cand.nrCandidato}">00</span>
                     </h2>
                     <p class="cargo" th:text="${cand.cargo + ' · ' + cand.siglaPartido}">Cargo · Partido</p>
-
                     <div class="etiquetas">
                         <span class="etiqueta"
                               th:classappend="${cand.genero == 'FEMININO' ? 'etiqueta-f' : (cand.genero == 'MASCULINO' ? 'etiqueta-m' : '')}"
@@ -85,7 +76,6 @@
                         <span class="etiqueta etiqueta-idade" th:if="${cand.idade > 0}"
                               th:text="${cand.idade + ' anos'}">00 anos</span>
                     </div>
-
                     <p class="detalhe" th:if="${cand.grauInstrucao != null and cand.grauInstrucao != '#NULO' and !cand.grauInstrucao.isBlank()}"
                        th:text="${cand.grauInstrucao}">Escolaridade</p>
                     <p class="detalhe" th:if="${cand.ocupacao != null and cand.ocupacao != '#NULO' and !cand.ocupacao.isBlank()}"
@@ -94,8 +84,6 @@
             </article>
         </div>
     </section>
-
 </main>
-
 </body>
 </html>
